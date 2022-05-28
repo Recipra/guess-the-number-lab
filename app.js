@@ -10,11 +10,9 @@ const game = {
   },
   getGuess: function() {
     let guess
-    while (guess > this.biggestNum || guess < this.smallestNum) {
-      guess = prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}!`)
+    while (guess > this.biggestNum || guess < this.smallestNum || isNaN(guess)) {
+      guess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}!`))
     }
   },
 }
-game.getGuess()
-
-// console.log(game.getGuess())
+// game.getGuess()
