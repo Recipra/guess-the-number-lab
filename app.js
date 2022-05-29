@@ -24,8 +24,10 @@ const game = {
       alert(`Congratulations! You guessed the number in ${this.prevGuesses.length} guesses!`)
     } else if (this.prevGuesses[this.prevGuesses.length - 1] > this.secretNum) {
       alert(`Your guess is too high! Previous guesses: ${this.prevGuesses}`)
+      this.biggestNum = this.prevGuesses[this.prevGuesses.length - 1]
     } else if (this.prevGuesses[this.prevGuesses.length - 1] < this.secretNum) {
       alert(`Your guess is too low! Previous guesses: ${this.prevGuesses}`)
+      this.smallestNum = this.prevGuesses[this.prevGuesses.length - 1]
     }
   }
 }
