@@ -1,10 +1,12 @@
 const game = {
   title: 'Guess the Number!',
-  biggestNum: 100,
-  smallestNum: 1,
+  biggestNum: null,
+  smallestNum: null,
   prevGuesses: [],
   secretNum: null,
   play: function() {
+    this.smallestNum = parseInt(prompt('Please enter your choice of the smallest number: '))
+    this.biggestNum = parseInt(prompt('Please enter your choice of the biggest number: '))
     this.secretNum = Math.floor(Math.random() * 
     (this.biggestNum - this.smallestNum + 1)) + this.smallestNum
     while (this.prevGuesses[this.prevGuesses.length - 1] !== this.secretNum) {
@@ -15,7 +17,7 @@ const game = {
   getGuess: function() {
     let guess
     while (guess > this.biggestNum || guess < this.smallestNum || isNaN(guess)) {
-      guess = parseInt(prompt(`Enter a guess between ${this.smallestNum} and ${this.biggestNum}!`))
+      guess = parseInt(prompt(`Now guess the secret number between ${this.smallestNum} and ${this.biggestNum}!`))
     return guess
     }
   },
